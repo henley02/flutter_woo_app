@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_woo_app/common/index.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
@@ -9,8 +10,13 @@ class SplashPage extends GetView<SplashController> {
 
   // 主视图
   Widget _buildView() {
-    return const Center(
-      child: Text("SplashPage"),
+    return Center(
+      child: Column(
+        children: [
+          Text("SplashPage - ${ConfigService.to.version}"),
+          Text("SplashPage - ${ConfigService.to.appName}"),
+        ],
+      ),
     );
   }
 
