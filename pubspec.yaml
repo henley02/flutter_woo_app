@@ -38,6 +38,7 @@ dependencies:
   dio: ^5.7.0
   get: ^4.6.6
   package_info_plus: ^8.0.2
+  shared_preferences: ^2.3.2
 
 dev_dependencies:
   flutter_test:
