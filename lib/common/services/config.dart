@@ -7,6 +7,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 class ConfigService extends GetxService {
   static ConfigService get to => Get.find();
 
+  /*------------包信息 start-------------*/
   ///包信息
   PackageInfo? _platform;
 
@@ -22,7 +23,9 @@ class ConfigService extends GetxService {
   Future<void> getPlatform() async {
     _platform = await PackageInfo.fromPlatform();
   }
+  /*------------end-------------*/
 
+  /*------------国际化 start-------------*/
   /// 国际化
   Locale locale = PlatformDispatcher.instance.locale;
 
@@ -46,6 +49,7 @@ class ConfigService extends GetxService {
     Get.updateLocale(value);
     Storage().setString(Constants.storageLanguageCode, value.languageCode);
   }
+  /*------------end-------------*/
 
   @override
   void onReady() {

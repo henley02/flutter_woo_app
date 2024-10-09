@@ -29,8 +29,6 @@ class StylesIndexController extends GetxController {
   onLanguageSelected() {
     var en = Translation.supportedLocales[0];
     var zh = Translation.supportedLocales[1];
-    print(ConfigService.to.locale);
-    print(ConfigService.to.locale.toLanguageTag());
     ConfigService.to.onLocaleUpdate(
         ConfigService.to.locale.toLanguageTag() == en.toLanguageTag()
             ? zh
