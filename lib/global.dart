@@ -8,8 +8,8 @@ class Global {
     WidgetsFlutterBinding.ensureInitialized();
     await Storage().init();
 
-    await Future.wait([
-      Get.putAsync<ConfigService>(() async => await ConfigService().init()),
-    ]).whenComplete(() {});
+    // 初始化服务
+    Get.put<HttpService>(HttpService());
+    Get.put<ConfigService>(ConfigService());
   }
 }

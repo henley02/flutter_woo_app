@@ -15,11 +15,6 @@ class ConfigService extends GetxService {
 
   String get appName => _platform?.appName ?? "-";
 
-  Future<ConfigService> init() async {
-    await getPlatform();
-    return this;
-  }
-
   Future<void> getPlatform() async {
     _platform = await PackageInfo.fromPlatform();
   }
@@ -52,8 +47,9 @@ class ConfigService extends GetxService {
   /*------------end-------------*/
 
   @override
-  void onReady() {
-    super.onReady();
+  void onInit() {
+    super.onInit();
+    getPlatform();
     initLocale();
   }
 }
