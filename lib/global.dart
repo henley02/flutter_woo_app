@@ -9,7 +9,7 @@ class Global {
     await Storage().init();
 
     // 初始化服务
-    Get.put<HttpService>(HttpService());
     Get.put<ConfigService>(ConfigService());
+    Get.put<HttpService>(HttpService());
   }
 }

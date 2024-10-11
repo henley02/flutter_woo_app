@@ -24,6 +24,7 @@ class HttpService extends GetxService {
     _dio.interceptors.add(RequestInterceptors());
   }
 
+  ///GET请求
   Future<Response> get(
     String url, {
     Map<String, dynamic>? params,
@@ -40,6 +41,7 @@ class HttpService extends GetxService {
     return response;
   }
 
+  ///POST请求
   Future<Response> post(
     String url, {
     dynamic data,
@@ -56,6 +58,7 @@ class HttpService extends GetxService {
     return response;
   }
 
+  ///PUT请求
   Future<Response> put(
     String url, {
     dynamic data,
@@ -72,6 +75,7 @@ class HttpService extends GetxService {
     return response;
   }
 
+  ///DELETE请求
   Future<Response> delete(
     String url, {
     dynamic data,
@@ -90,6 +94,11 @@ class HttpService extends GetxService {
 }
 
 class RequestInterceptors extends Interceptor {
+  @override
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    return handler.next(options);
+  }
+
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
     if (response.statusCode != 200 && response.statusCode != 201) {
