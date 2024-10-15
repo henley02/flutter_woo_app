@@ -16,11 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode:
+          ConfigService.to.isDarkModel ? ThemeMode.dark : ThemeMode.light,
       initialRoute: RouteNames.stylesStylesIndex,
       getPages: RoutePages.list,
       navigatorObservers: [RoutePages.observer],

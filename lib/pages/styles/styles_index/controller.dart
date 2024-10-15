@@ -35,4 +35,9 @@ class StylesIndexController extends GetxController {
             : en);
     update(["styles_index"]);
   }
+
+  onThemeSelected() async {
+    await ConfigService.to.switchThemeModel();
+    update(["styles_index"]);
+  }
 }

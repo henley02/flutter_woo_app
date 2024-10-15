@@ -15,7 +15,12 @@ class StylesIndexPage extends GetView<StylesIndexController> {
         ListTile(
           onTap: controller.onLanguageSelected,
           title: Text("语言 :  ${ConfigService.to.locale.toLanguageTag()}"),
-        )
+        ),
+        ListTile(
+          onTap: controller.onThemeSelected,
+          title:
+              Text("主题 :  ${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
+        ),
       ],
     );
   }

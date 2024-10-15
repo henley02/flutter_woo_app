@@ -5,4 +5,7 @@ class Constants {
 
   // 服务器baseUrl
   static const apiBaseUrl = 'https://wpapi.ducafecat.tech';
+
+  ///主题
+  static const storageThemeCode = 'theme_code';
 }
