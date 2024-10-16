@@ -115,6 +115,7 @@ class MaterialTheme {
     return theme(darkScheme());
   }
 
+  //todo 没有兼容mt3
   ThemeData theme(ColorScheme colorScheme) => ThemeData(
         useMaterial3: true,
         brightness: colorScheme.brightness,
@@ -125,9 +126,14 @@ class MaterialTheme {
         ),
         appBarTheme: AppBarTheme(
           color: colorScheme.primary,
+          titleTextStyle: const TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
         ),
         scaffoldBackgroundColor: colorScheme.surface,
         canvasColor: colorScheme.surface,
+        fontFamily: "Montserrat",
       );
 
   List<ExtendedColor> get extendedColors => [];
